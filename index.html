@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="RoboMart - Robotics components, electronics and DIY kits in Ahilyanagar. Local home delivery and free office delivery.">
+<title>RoboMart | Robotics Components in Ahilyanagar</title>
+<!-- RoboMart Stage 1 Delivery build: 2026-09-14 -->
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<div class="top">
+  <span>🤖 Robotics Components • DIY Kits • Electronics</span>
+  <span>📍 Serving Ahilyanagar • Home Delivery ₹50 • Office Delivery FREE</span>
+</div>
+
+<header>
+<nav>
+  <a class="logo" href="#">Robo<b>Mart</b></a>
+  <div class="search">
+    <input id="search" type="search" placeholder="Search Arduino, ESP32, sensors, motors & more..." autocomplete="off" oninput="handleSearchInput()" onkeydown="handleSearchKeydown(event)">
+    <button aria-label="Search" onclick="submitSearch()">🔍</button>
+    <div id="searchSuggestions" class="search-suggestions"></div>
+  </div>
+  <div class="navlinks">
+    <button id="accountBtn" onclick="toggleAccountMenu()">Login / Register</button>
+    <button class="cart" onclick="openCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
+  </div>
+</nav>
+</header>
+
+<div class="local-note">
+  <strong>Robotics Components in Ahilyanagar</strong>
+  <span> — Arduino, ESP32, sensors, motors and student robotics kits with home delivery and free office delivery.</span>
+</div>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="eyebrow">Local Robotics Store • Ahilyanagar</div>
+      <h1>BUILD SOMETHING <span>THAT MOVES.</span></h1>
+      <p>Get the components you need for robotics projects, school activities and DIY builds — right here in Ahilyanagar.</p>
+      <div class="hero-actions">
+        <a class="btn btn-dark" href="#products">Shop Components</a>
+        <a class="btn btn-light" href="#projects">Explore Projects</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="robot">🤖</div>
+      <div class="label">Built for Students & Makers</div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="container trust-grid">
+    <div class="trust-item"><strong>📍 Ahilyanagar Focused</strong>Local robotics component store</div>
+    <div class="trust-item"><strong>🚚 Home Delivery</strong>₹50 within service areas*</div>
+    <div class="trust-item"><strong>🏫 Office Delivery</strong>Free delivery at our Ahilyanagar office</div>
+  </div>
+</div>
+
+<section class="content">
+<div class="container">
+  <div class="section-head">
+    <div><h2>Shop by Category</h2><p>Find the basic building blocks for your next project.</p></div>
+  </div>
+  <div class="categories">
+    <button class="category" onclick="filterCategory('Arduino')"><span class="icon">🔴</span><strong>Arduino</strong><small>Boards & modules</small></button>
+    <button class="category" onclick="filterCategory('ESP32')"><span class="icon">📡</span><strong>ESP32</strong><small>Wi-Fi & IoT</small></button>
+    <button class="category" onclick="filterCategory('Sensors')"><span class="icon">👁️</span><strong>Sensors</strong><small>Detect & measure</small></button>
+    <button class="category" onclick="filterCategory('Motors')"><span class="icon">⚙️</span><strong>Motors</strong><small>Movement parts</small></button>
+    <button class="category" onclick="filterCategory('Drivers')"><span class="icon">🔧</span><strong>Drivers</strong><small>Motor control</small></button>
+    <button class="category" onclick="filterCategory('Kits')"><span class="icon">🤖</span><strong>DIY Kits</strong><small>Build & learn</small></button>
+  </div>
+</div>
+</section>
+
+<section class="content" id="products" style="background:#f8f8f5">
+<div class="container">
+  <div class="section-head">
+    <div><h2>Components</h2><p>Live catalogue from RoboMart inventory.</p></div>
+    <button class="btn btn-light" onclick="clearFilter()">View All</button>
+  </div>
+  <div id="productGrid" class="product-grid"></div>
+</div>
+</section>
+
+<section class="content" id="projects">
+<div class="container">
+  <div class="section-head">
+    <div><h2>What Can You Build?</h2><p>Turn simple components into practical projects.</p></div>
+  </div>
+  <div class="projects">
+    <div class="project"><div class="project-icon">🚗</div><h3>Robot Car</h3><p>Motors + motor driver + controller + Arduino.</p></div>
+    <div class="project"><div class="project-icon">🔥</div><h3>Fire Fighting Car</h3><p>Use sensors, a pump and motors to create an autonomous project.</p></div>
+    <div class="project"><div class="project-icon">🌱</div><h3>Smart Plant</h3><p>Combine a soil sensor, controller and output device.</p></div>
+  </div>
+</div>
+</section>
+
+<section class="content">
+<div class="container">
+  <div class="cta">
+    <div>
+      <h2>DON'T KNOW<br>WHERE TO START?</h2>
+      <p>Tell us what you want to build. We can help you identify the components you need.</p>
+    </div>
+    <a class="btn" href="mailto:hello@example.com?subject=Robotics%20Project%20Help">Ask for Help</a>
+  </div>
+</div>
+</section>
+
+<section class="content">
+<div class="container why">
+  <div><div class="eyebrow">Why RoboMart?</div><h2>A LOCAL STORE FOR LOCAL MAKERS.</h2></div>
+  <div class="why-list">
+    <div class="why-item"><div class="why-num">01</div><div><h3>Local Availability</h3><p>Designed around the needs of students, teachers, hobbyists and makers in Ahilyanagar.</p></div></div>
+    <div class="why-item"><div class="why-num">02</div><div><h3>Flexible Delivery</h3><p>Choose Home Delivery for ₹50 or free Office Delivery in Ahilyanagar.</p></div></div>
+    <div class="why-item"><div class="why-num">03</div><div><h3>Project-Friendly</h3><p>Components are organised around practical robotics and electronics projects.</p></div></div>
+  </div>
+</div>
+</section>
+
+<footer>
+<div class="container">
+  <div class="footer-grid">
+    <div><a class="logo" href="#">Robo<b>Mart</b></a><p>Robotics components and DIY electronics for students and makers in Ahilyanagar.</p></div>
+    <div><h4>Explore</h4><ul><li><a href="#products">Components</a></li><li><a href="#projects">Projects</a></li><li><a href="#products">DIY Kits</a></li></ul></div>
+    <div><h4>Local Service</h4><ul><li>Ahilyanagar, Maharashtra</li><li>Home Delivery ₹50*</li><li>Office Delivery FREE</li></ul></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 RoboMart. All rights reserved.</span><span>*Delivery time and service area depend on stock and location.</span></div>
+</div>
+</footer>
+
+
+
+<div id="toast" class="toast"></div><div id="buildVersion" style="position:fixed;right:8px;bottom:8px;font-size:9px;opacity:.25;z-index:9999">RoboMart v21 - Full-page Admin Dashboard</div>
+
+<div id="authModal" class="auth-modal" onclick="if(event.target===this)closeAuth()">
+  <div class="auth-box">
+    <button class="auth-close" onclick="closeAuth()" aria-label="Close">✕</button>
+    <h2 id="authTitle">Welcome to RoboMart</h2>
+    <div class="auth-sub" id="authSubtitle">Create an account to manage your orders.</div>
+
+    <div class="auth-tabs">
+      <button id="loginTab" class="auth-tab active" onclick="showAuthTab('login')">Login</button>
+      <button id="registerTab" class="auth-tab" onclick="showAuthTab('register')">Register</button>
+    </div>
+
+    <button class="google-login" type="button" onclick="loginWithGoogle()">
+      <span class="google-icon">G</span> Continue with Google
+    </button>
+    <div class="auth-divider"><span>or</span></div>
+
+    <form id="loginForm" class="auth-form" onsubmit="loginUser(event)">
+      <div><label>Email</label><input id="loginEmail" type="email" autocomplete="email" required></div>
+      <div><label>Password</label><input id="loginPassword" type="password" autocomplete="current-password" required></div>
+      <button class="auth-submit" type="submit">Login</button>
+      <button class="auth-link" type="button" onclick="resetPassword()">Forgot password?</button>
+      <div id="loginMessage" class="auth-message"></div>
+    </form>
+
+    <form id="registerForm" class="auth-form" style="display:none" onsubmit="registerUser(event)">
+      <div><label>Full name</label><input id="registerName" type="text" autocomplete="name" minlength="2" required></div>
+      <div><label>Email</label><input id="registerEmail" type="email" autocomplete="email" required>
+      <label for="registerWhatsapp">WhatsApp Number</label>
+      <input id="registerWhatsapp" type="tel" inputmode="numeric" autocomplete="tel"
+             placeholder="10-digit WhatsApp number" maxlength="10"
+             pattern="[6-9][0-9]{9}" required>
+      <small class="field-help">Use the WhatsApp number where you want to receive order updates.</small></div>
+      <div><label>Password</label><input id="registerPassword" type="password" autocomplete="new-password" minlength="6" required></div>
+      <div><label>Confirm password</label><input id="registerConfirm" type="password" autocomplete="new-password" minlength="6" required></div>
+      <button class="auth-submit" type="submit">Create Account</button>
+      <div id="registerMessage" class="auth-message"></div>
+    </form>
+  </div>
+</div>
+
+<div id="accountMenu" class="account-menu">
+  <div id="accountEmail" class="account-email"></div>
+  <div id="accountRole" class="account-role">Customer account</div>
+  <button id="adminDashboardBtn" class="admin-link" style="display:none" onclick="goAdmin()">Admin Dashboard</button>
+  <button onclick="openOrders()">📦 My Orders</button>
+  <button onclick="openProfile()">Profile</button>
+  <button onclick="logoutUser()">Logout</button>
+</div>
+
+
+<div id="ordersModal" class="product-modal" onclick="if(event.target===this)closeOrders()">
+  <div class="product-detail orders-box">
+    <button class="product-detail-close" onclick="closeOrders()" aria-label="Close">✕</button>
+    <h2>My Orders</h2>
+    <p class="orders-sub">Your confirmed orders and payments, all in one place.</p>
+    <div id="ordersContent" class="orders-list">
+      <div class="orders-loading">Loading your orders...</div>
+    </div>
+  </div>
+</div>
+
+<div id="adminPage" class="admin-page">
+  <aside class="admin-sidebar">
+    <div class="admin-brand">Robo<b>Mart</b><small>Admin Panel</small></div>
+    <nav class="admin-nav">
+      <div class="nav-group">Manage Store</div>
+      <button class="active" data-admin-section="dashboard" onclick="showAdminSection('dashboard')">📊 Dashboard</button>
+      <button data-admin-section="orders" onclick="showAdminSection('orders')">📦 Orders</button>
+      <button data-admin-section="products" onclick="showAdminSection('products')">🧩 Products</button>
+      <button data-admin-section="inventory" onclick="showAdminSection('inventory')">📋 Inventory</button>
+      <button data-admin-section="customers" onclick="showAdminSection('customers')">👥 Customers</button>
+      <div class="nav-group">Business</div>
+      <button data-admin-section="reports" onclick="showAdminSection('reports')">📈 Sales & Reports</button>
+      <button data-admin-section="settings" onclick="showAdminSection('settings')">⚙️ Store Settings</button>
+    </nav>
+    <div class="admin-sidebar-bottom"><button class="admin-back" onclick="closeAdmin()">← Back to Store</button></div>
+  </aside>
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <div><div id="adminPageTitle" class="admin-top-title">Dashboard</div><div id="adminPageSub" class="admin-top-sub">Robo Mart store overview</div></div>
+      <div id="adminUserPill" class="admin-user-pill">Administrator</div>
+    </div>
+    <div class="admin-content">
+      <section id="adminSection-dashboard" class="admin-section active">
+        <div class="admin-section-head"><div><h2>Dashboard</h2><p>Quick overview of your Robo Mart store.</p></div><button class="admin-btn" onclick="showAdminSection('orders')">View Orders</button></div>
+        <div id="adminStatsGrid" class="admin-grid"></div>
+        <div class="admin-panel admin-dashboard-note"><h3>Order Management</h3><div class="admin-panel-sub">Use the Orders section to search a customer or Order ID and manage delivery status, estimated delivery and OTP.</div><button class="admin-btn" onclick="showAdminSection('orders')">Open Orders</button></div>
+      </section>
+
+      <section id="adminSection-orders" class="admin-section">
+        <div class="admin-section-head"><div><h2>Orders</h2><p>Search customers or Order IDs and manage the six delivery statuses, estimated delivery and OTP verification.</p></div></div>
+        <div class="admin-panel">
+          <div class="admin-toolbar">
+  <input id="adminOrderSearch" class="admin-search" type="search"
+    placeholder="Search Order ID, customer or WhatsApp"
+    oninput="filterAdminOrders()">
+  <select id="adminOrderFilter" class="admin-filter" onchange="filterAdminOrders()">
+    <option value="ALL">All Orders</option>
+    <option value="PENDING">Payment Required</option>
+    <option value="PLACED">Order Placed</option>
+    <option value="CONFIRMED">Order Confirmed</option>
+    <option value="DISPATCHED">Dispatched</option>
+    <option value="OUT_FOR_DELIVERY">Out for Delivery</option>
+    <option value="DELIVERED">Delivered</option>
+    <option value="CANCELLED">Cancelled</option>
+  </select>
+  <button class="admin-btn light" onclick="openAdmin()">↻ Refresh</button>
+</div>
+          <div id="adminOrdersContent" class="orders-list"><div class="orders-loading">Loading orders...</div></div>
+        </div>
+      </section>
+
+      <section id="adminSection-products" class="admin-section"><div class="admin-section-head"><div><h2>Products</h2><p>Manage your robotics components, pricing, stock and visibility.</p></div><button class="admin-btn" onclick="showToast('Product management will be added next.','success')">+ Add Product</button></div><div class="admin-placeholder"><strong>Product Management</strong><span>Add, edit, activate/deactivate products, manage SKU, MRP, Robo Mart price, discount and delivery time.</span></div></section>
+      <section id="adminSection-inventory" class="admin-section"><div class="admin-section-head"><div><h2>Inventory</h2><p>Monitor stock levels and low-stock alerts.</p></div></div><div class="admin-placeholder"><strong>Inventory Management</strong><span>Low stock and out-of-stock management will be connected to the product catalogue.</span></div></section>
+      <section id="adminSection-customers" class="admin-section"><div class="admin-section-head"><div><h2>Customers</h2><p>View customers, order history and spending.</p></div></div><div class="admin-placeholder"><strong>Customer Management</strong><span>Customer profiles, order count, total spent and order history will be added here.</span></div></section>
+      <section id="adminSection-reports" class="admin-section"><div class="admin-section-head"><div><h2>Sales & Reports</h2><p>Track sales, orders, average order value and delivery performance.</p></div></div><div class="admin-placeholder"><strong>Sales & Reports</strong><span>Today, week and month sales, best sellers, revenue by product and delivery statistics will be added here.</span></div></section>
+      <section id="adminSection-settings" class="admin-section"><div class="admin-section-head"><div><h2>Store Settings</h2><p>Configure delivery charges, office delivery and store information.</p></div></div><div class="admin-placeholder"><strong>Store Settings</strong><span>Home Delivery ₹50, Office Delivery Free, office address, timings and store contact details will be managed here.</span></div></section>
+    </div>
+  </div>
+</div>
+
+<div id="profileModal" class="product-modal" onclick="if(event.target===this)closeProfile()">
+  <div class="product-detail profile-box">
+    <button class="product-detail-close" onclick="closeProfile()" aria-label="Close">✕</button>
+    <h2 style="margin-bottom:8px">My Profile</h2>
+    <p style="color:#666;margin-bottom:20px">Update your contact and delivery details for Home Delivery.</p>
+    <form id="profileForm" onsubmit="saveProfile(event)">
+      <div style="margin-bottom:14px">
+        <label for="profileName">Full Name</label>
+        <input id="profileName" type="text" autocomplete="name" minlength="2" required>
+      </div>
+      <div style="margin-bottom:14px">
+        <label for="profileEmail">Email</label>
+        <input id="profileEmail" type="email" readonly>
+      </div>
+      <div style="margin-bottom:14px">
+        <label for="profileWhatsapp">WhatsApp Number</label>
+        <input id="profileWhatsapp" type="tel" inputmode="numeric" autocomplete="tel"
+               placeholder="10-digit WhatsApp number" maxlength="10"
+               pattern="[6-9][0-9]{9}" required>
+      </div>
+      <div style="margin-bottom:16px">
+        <label for="profileAddress">Address</label>
+        <textarea id="profileAddress" rows="4" placeholder="Enter your delivery address"></textarea>
+      </div>
+      <div id="profileMessage" class="auth-message"></div>
+      <button class="auth-submit" type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
+
+<div id="productModal" class="product-modal" onclick="if(event.target===this)closeProduct()">
+  <div class="product-detail">
+    <button class="product-detail-close" onclick="closeProduct()" aria-label="Close">✕</button>
+    <div id="productDetailContent"></div>
+  </div>
+</div>
+
+<div id="overlay" class="overlay" onclick="closeCart()"></div>
+<aside id="cartDrawer" class="cart-drawer" aria-label="Shopping cart">
+  <div class="cart-head"><h2>Your Cart</h2><button class="close" onclick="closeCart()">✕</button></div>
+  <div id="cartItems" class="cart-items"></div>
+  <div class="cart-foot">
+    <div class="delivery-section">
+      <div class="delivery-title">Delivery Method</div>
+      <label class="delivery-option">
+        <input type="radio" name="deliveryMethod" value="HOME" checked onchange="updateDeliveryTotal()">
+        <span class="delivery-option-main"><strong>🏠 Home Delivery</strong><small>Delivered to your saved address</small></span>
+        <strong class="delivery-price">+₹50</strong>
+      </label>
+      <label class="delivery-option">
+        <input type="radio" name="deliveryMethod" value="OFFICE" onchange="updateDeliveryTotal()">
+        <span class="delivery-option-main"><strong>🏫 Office Delivery</strong><small>Ahilyanagar office • Free</small></span>
+        <strong class="delivery-price free">FREE</strong>
+      </label>
+      <div class="delivery-note">Your saved profile address is used for Home Delivery. Office Delivery is free.</div>
+    </div>
+    <div class="cart-summary-row"><span>Items Total</span><span id="cartItemsTotal">₹0</span></div>
+    <div class="cart-summary-row"><span>Delivery</span><span id="cartDeliveryCharge">₹50</span></div>
+    <div class="total"><span>Total</span><span id="cartTotal">₹0</span></div>
+    <button class="checkout" onclick="checkout()">Proceed to Order</button>
+  </div>
+</aside>
+
+
+
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
